@@ -18,11 +18,24 @@
   puts "例#{t}の答え"
   File.open("data00#{t}.txt", "r"){ |f|
     # ここにプログラムを記述してください。
-    while line = f.gets
-      puts line
+    #1行目呼び出し
+    member_num = f.gets.to_i
+    #2行目呼び出し
+    member_name = f.gets.split
+    #3行目をsplitしてvalueが0のhashに変換
+    hash = {}
+    member_name.each do |value|
+      hash.store(value, 0)
     end
-  }
-end
+    #4行目呼び出し
+    study = f.gets.to_i
+    study.times do |study|
+    study_cost = f.gets.split
+    hash[study_cost[0]] += study_cost[1].to_i
+    end
+
+    }
+  end
 
 # data001で期待する出力
 # {"yamaguchi"=>1500, "maeda"=>1000}
