@@ -34,6 +34,7 @@
     hash[study_cost[0]] += study_cost[1].to_i
     end
 
+    p hash.sort_by { |key, value| - value }.to_h
     }
   end
 
