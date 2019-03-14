@@ -18,6 +18,9 @@
   puts "例#{t}の答え"
   File.open("data00#{t}.txt", "r"){ |f|
     # ここにプログラムを記述してください。
+    while line = f.gets
+      puts line
+    end
   }
 end
 
