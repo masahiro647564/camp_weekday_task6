@@ -24,14 +24,15 @@
     member_name = f.gets.split
     #3行目をsplitしてvalueが0のhashに変換
     hash = {}
+    
     member_name.each do |value|
       hash.store(value, 0)
     end
     #4行目呼び出し
     study = f.gets.to_i
-    study.times do |study|
-    study_cost = f.gets.split
-    hash[study_cost[0]] += study_cost[1].to_i
+      study.times do |study|
+        study_cost = f.gets.split
+        hash[study_cost[0]] += study_cost[1].to_i
     end
     #金額が高い順に出力する｡
     p hash.sort_by { |key, value| - value }.to_h
